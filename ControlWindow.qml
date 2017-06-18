@@ -34,7 +34,7 @@ Window {
         }
 
         Button {
-            text: "scroll"
+            text: "Set text"
            // anchors.centerIn: parent
 
             onClicked: {
@@ -170,6 +170,18 @@ Window {
             text: "Text color"
             onClicked: {
                 textColorDialog.open()
+            }
+        }
+
+        Rectangle {
+            width: 1
+            height: 1
+        }
+
+        Button {
+            text: "Close"
+            onClicked: {
+                controlwindow.visible=false;
             }
         }
     }
