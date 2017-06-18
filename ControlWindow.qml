@@ -78,6 +78,51 @@ Window {
             }
         }
 
+        Text {
+            text: "Bottom Offset:"
+        }
+        Slider {
+            id: bottomOffset
+            width: 200
+            minimumValue: 0
+            maximumValue: 500
+            value: 80
+            onValueChanged:
+            {
+                textRectangle.anchors.bottomMargin=value
+            }
+        }
+
+        Text {
+            text: "Left Offset:"
+        }
+        Slider {
+            id: leftOffset
+            width: 200
+            minimumValue: 0
+            maximumValue: 500
+            value: 0
+            onValueChanged:
+            {
+                textRectangle.anchors.leftMargin=value
+            }
+        }
+
+        Text {
+            text: "Right Offset:"
+        }
+        Slider {
+            id: rightOffset
+            width: 200
+            minimumValue: 0
+            maximumValue: 500
+            value: 0
+            onValueChanged:
+            {
+                textRectangle.anchors.rightMargin=value
+            }
+        }
+
         Rectangle {
             width: 1
             height: 1

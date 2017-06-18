@@ -30,6 +30,7 @@ Window {
             anchors.bottomMargin: 60
             height: 50
             color: "#111111"
+            clip: true
 
             Text {
                 id: mainText
@@ -46,7 +47,7 @@ Window {
                       //  console.log(mainText.width)
 
                        if(mainText.x < -mainText.width && cw.loop)
-                           mainText.x=mainWindow.width
+                           mainText.x=mainWindow.width-textRectangle.anchors.leftMargin-textRectangle.anchors.rightMargin
 
                        mainText.x=mainText.x-1;
                    }
