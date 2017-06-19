@@ -172,6 +172,30 @@ Window {
                 textColorDialog.open()
             }
         }
+
+        Rectangle {
+            width: 1
+            height: 1
+        }
+
+        Button {
+            text: "maximize"
+            onClicked: {
+                mainWindow.visibility = Window.FullScreen
+            }
+        }
+
+        Rectangle {
+            width: 1
+            height: 1
+        }
+
+        Button {
+            text: "normal"
+            onClicked: {
+                mainWindow.visibility = Window.normal
+            }
+        }
     }
 
 

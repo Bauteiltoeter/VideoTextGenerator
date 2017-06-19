@@ -7,9 +7,9 @@ import QtQuick.Dialogs 1.0
 Window {
     id: mainWindow
     visible: true
-    width: 1700
-    height: 800
-    visibility: Window.FullScreen
+    width: 500
+    height: 500
+    //visibility: Window. Window.FullScreen
     title: qsTr("Hello World")
 
     ControlWindow {
