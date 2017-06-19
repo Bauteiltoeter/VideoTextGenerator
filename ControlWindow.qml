@@ -54,11 +54,12 @@ Window {
          //   anchors.centerIn: parent
          //   anchors.verticalCenterOffset: 50
             width: 200
-            minimumValue: 1
-            maximumValue: 20
+            minimumValue: 1000
+            maximumValue: 30000
             onValueChanged:
             {
-                scrolltimer.interval=value
+                animation.duration = value
+                animation.restart()
             }
         }
 
@@ -105,6 +106,7 @@ Window {
             onValueChanged:
             {
                 textRectangle.anchors.leftMargin=value
+                animation.restart()
             }
         }
 
@@ -120,6 +122,7 @@ Window {
             onValueChanged:
             {
                 textRectangle.anchors.rightMargin=value
+                animation.restart()
             }
         }
 
@@ -131,9 +134,21 @@ Window {
         CheckBox {
                 id: loopCheckboxnter
                 text: "loop"
+                checked: true
 
                 onCheckedChanged: {
-                    controlwindow.loop = loopCheckboxnter.checked
+                    if(checked)
+                    {
+                        animation.loops=Animation.Infinite
+                    }
+                    else
+                    {
+
+                        animation.loops=1
+                        animation.alwaysRunToEnd=true
+                        animation.stop()
+                    }
+
                 }
             }
 

@@ -7,10 +7,15 @@ import QtQuick.Dialogs 1.0
 Window {
     id: mainWindow
     visible: true
-    width: 500
+    width: 1700
     height: 500
     //visibility: Window. Window.FullScreen
     title: qsTr("Hello World")
+
+    onWidthChanged: {
+        animation.from=mainWindow.width
+        animation.restart()
+    }
 
     ControlWindow {
         id: cw
@@ -49,18 +54,13 @@ Window {
                 x: mainWindow.width
                 font.pixelSize: 45
 
-                Timer {
-                id: scrolltimer
-                   interval: 10; running: true; repeat: true
-                   onTriggered: {
-                      //  console.log(mainText.width)
-
-                       if(mainText.x < -mainText.width && cw.loop)
-                           mainText.x=mainWindow.width-textRectangle.anchors.leftMargin-textRectangle.anchors.rightMargin
-
-                       mainText.x=mainText.x-1;
-                   }
-               }
+                NumberAnimation on x{
+                    id: animation
+                    from: mainWindow.width - textRectangle.anchors.rightMargin - textRectangle.anchors.leftMargin
+                    to: -1*mainText.width
+                    loops: Animation.Infinite
+                    duration: 1000
+                }
             }
         }
     }
