@@ -34,7 +34,7 @@ Window {
         }
 
         Button {
-            text: "scroll"
+            text: "Set text"
            // anchors.centerIn: parent
 
             onClicked: {
@@ -193,7 +193,19 @@ Window {
         Button {
             text: "normal"
             onClicked: {
-                mainWindow.visibility = Window.normal
+                mainWindow.visibility = Window.Windowed
+	    }
+	}
+
+Rectangle {
+            width: 1
+            height: 1
+        }
+
+        Button {
+            text: "Close"
+            onClicked: {
+                controlwindow.visible=false;
             }
         }
     }

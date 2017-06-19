@@ -13,7 +13,16 @@ Window {
     title: qsTr("Hello World")
 
     ControlWindow {
-    id: cw}
+        id: cw
+    }
+
+    MouseArea {
+        anchors.fill: parent
+
+        onClicked: {
+            cw.visible=!cw.visible
+        }
+    }
 
 
 
@@ -34,7 +43,7 @@ Window {
 
             Text {
                 id: mainText
-                text: "Hallo Lord Eldingar"
+                text: "Hallo BFD"
                 color: "#FF0000"
                 anchors.verticalCenter: parent.verticalCenter
                 x: mainWindow.width
