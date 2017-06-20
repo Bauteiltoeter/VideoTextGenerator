@@ -34,7 +34,7 @@ Window {
     Rectangle {
         id: background
         anchors.fill: parent
-        color: "#00FF00"
+        color: "#0076A3"
 
         Rectangle {
             id: textRectangle
