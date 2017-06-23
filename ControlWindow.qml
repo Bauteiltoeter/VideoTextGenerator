@@ -152,21 +152,11 @@ Window {
                 }
             }
 
-        Rectangle {
-            width: 1
-            height: 1
-        }
-
         Button {
             text: "background color"
             onClicked: {
                 backgroundColorDialog.open()
             }
-        }
-
-        Rectangle {
-            width: 1
-            height: 1
         }
 
         Button {
@@ -188,10 +178,6 @@ Window {
             }
         }
 
-        Rectangle {
-            width: 1
-            height: 1
-        }
 
         Button {
             text: "maximize"
@@ -200,22 +186,47 @@ Window {
             }
         }
 
-        Rectangle {
-            width: 1
-            height: 1
-        }
-
         Button {
             text: "normal"
             onClicked: {
                 mainWindow.visibility = Window.Windowed
-	    }
-	}
-
-Rectangle {
-            width: 1
-            height: 1
+            }
         }
+
+
+        Button {
+            text: "Font: Arial"
+            onClicked: {
+                mainText.font.family="Arial"
+            }
+        }
+
+        Button {
+            text: "Font: LCARS"
+            onClicked: {
+                mainText.font.family="LCARSGTJ3"
+            }
+        }
+
+        Button {
+            text: "Font: Ubuntu"
+            onClicked: {
+                mainText.font.family="Ubuntu"
+            }
+        }
+
+        Button {
+            text: "Font: Helvetica"
+            onClicked: {
+                mainText.font.family="Helvetica"
+            }
+        }
+
+
+    Rectangle {
+        width: 1
+        height: 1
+    }
 
         Button {
             text: "Close"
@@ -224,12 +235,6 @@ Rectangle {
             }
         }
     }
-
-
-
-
-
-
 
     ColorDialog {
         visible: false
