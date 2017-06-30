@@ -3,6 +3,7 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 1.4
 import QtQuick.Dialogs 1.0
 
+import VideoText.scrollingText 1.0
 
 Window {
     id: mainWindow
@@ -44,23 +45,12 @@ Window {
             anchors.bottomMargin: 60
             height: 50
             color: "#111111"
-            clip: true
+           // clip: true
 
-            Text {
+            ScrollingText {
                 id: mainText
-                text: "Hallo BFD"
-                color: "#FF0000"
-                anchors.verticalCenter: parent.verticalCenter
-                x: mainWindow.width
-                font.pixelSize: 45
-
-                NumberAnimation on x{
-                    id: animation
-                    from: mainWindow.width - textRectangle.anchors.rightMargin - textRectangle.anchors.leftMargin
-                    to: -1*mainText.width
-                    loops: Animation.Infinite
-                    duration: 1000
-                }
+                visible: true
+                anchors.fill: parent
             }
         }
     }

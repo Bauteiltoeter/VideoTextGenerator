@@ -39,7 +39,6 @@ Window {
 
             onClicked: {
                 mainText.text=textfield.text
-                mainText.x=mainWindow.width
             }
         }
 
@@ -54,12 +53,13 @@ Window {
          //   anchors.centerIn: parent
          //   anchors.verticalCenterOffset: 50
             width: 200
-            minimumValue: 1000
-            maximumValue: 30000
+            minimumValue: 1
+            maximumValue: 20
             onValueChanged:
             {
-                animation.duration = value
-                animation.restart()
+                mainText.px_per_ms= value
+                //animation.duration = value
+                //animation.restart()
             }
         }
 
@@ -75,7 +75,7 @@ Window {
             onValueChanged:
             {
                 textRectangle.height=value
-                mainText.font.pixelSize=value-5
+                //mainText.font.pixelSize=value-5
             }
         }
 
