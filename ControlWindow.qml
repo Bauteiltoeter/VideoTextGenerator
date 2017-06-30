@@ -35,31 +35,22 @@ Window {
 
         Button {
             text: "Set text"
-           // anchors.centerIn: parent
-
             onClicked: {
                 mainText.text=textfield.text
             }
         }
 
         Text {
-          //  anchors.right: speedSlider.left
-          //  anchors.rightMargin: 10
-         //   anchors.verticalCenter: speedSlider.verticalCenter
             text: "Speed:"
         }
         Slider {
             id: speedSlider
-         //   anchors.centerIn: parent
-         //   anchors.verticalCenterOffset: 50
             width: 200
             minimumValue: 1
             maximumValue: 20
             onValueChanged:
             {
                 mainText.px_per_ms= value
-                //animation.duration = value
-                //animation.restart()
             }
         }
 
@@ -75,7 +66,21 @@ Window {
             onValueChanged:
             {
                 textRectangle.height=value
-                //mainText.font.pixelSize=value-5
+            }
+        }
+
+        Text {
+            text: "FontSize:"
+        }
+        Slider {
+            id: fontSizeSlider
+            width: 200
+            minimumValue: 10
+            maximumValue: 80
+            value: 30
+            onValueChanged:
+            {
+                mainText.fontSize=value
             }
         }
 
@@ -106,7 +111,6 @@ Window {
             onValueChanged:
             {
                 textRectangle.anchors.leftMargin=value
-                animation.restart()
             }
         }
 
@@ -122,35 +126,8 @@ Window {
             onValueChanged:
             {
                 textRectangle.anchors.rightMargin=value
-                animation.restart()
             }
         }
-
-        Rectangle {
-            width: 1
-            height: 1
-        }
-
-        CheckBox {
-                id: loopCheckboxnter
-                text: "loop"
-                checked: true
-
-                onCheckedChanged: {
-                    if(checked)
-                    {
-                        animation.loops=Animation.Infinite
-                    }
-                    else
-                    {
-
-                        animation.loops=1
-                        animation.alwaysRunToEnd=true
-                        animation.stop()
-                    }
-
-                }
-            }
 
         Button {
             text: "background color"
