@@ -59,6 +59,7 @@ QString ScrollingText::text()
 
 void ScrollingText::setText(QString text)
 {
+    x_pos = width();
     _text = text;
 }
 

@@ -10,208 +10,50 @@ Window {
     height: 500
     title: qsTr("Control station")
 
-    property bool loop: false
-
     onClosing: mainWindow.close()
 
-    Grid {
-        anchors.centerIn: parent
-        columns: 2
-        spacing: 10
 
-        Text {
-            text: "Text:"
-        }
+    TextControl {
+        id: textControl
+    }
 
-        TextField {
-            id: textfield
-            width: 200
-        }
+    ColorControl {
+        id: colorControl
+        anchors.top: textControl.bottom
+        anchors.topMargin: 10
+    }
+
+
+    PositionControl {
+        id: positionControl
+        anchors.top: colorControl.bottom
+        anchors.topMargin: 10
+    }
+
+    WindowControl {
+        id: windowControl
+        anchors.top: positionControl.bottom
+        anchors.topMargin: 10
+    }
+
+
+  /*
+
+
+
+
+
+
+
+
 
         Rectangle {
             width: 1
             height: 1
         }
 
-        Button {
-            text: "Set text"
-            onClicked: {
-                mainText.text=textfield.text
-            }
-        }
 
-        Text {
-            text: "Speed:"
-        }
-        Slider {
-            id: speedSlider
-            width: 200
-            minimumValue: 1
-            maximumValue: 20
-            onValueChanged:
-            {
-                mainText.px_per_ms= value
-            }
-        }
-
-        Text {
-            text: "Height:"
-        }
-        Slider {
-            id: heightSlider
-            width: 200
-            minimumValue: 30
-            maximumValue: 80
-            value: 50
-            onValueChanged:
-            {
-                textRectangle.height=value
-            }
-        }
-
-        Text {
-            text: "FontSize:"
-        }
-        Slider {
-            id: fontSizeSlider
-            width: 200
-            minimumValue: 10
-            maximumValue: 80
-            value: 30
-            onValueChanged:
-            {
-                mainText.fontSize=value
-            }
-        }
-
-        Text {
-            text: "Bottom Offset:"
-        }
-        Slider {
-            id: bottomOffset
-            width: 200
-            minimumValue: 0
-            maximumValue: 500
-            value: 80
-            onValueChanged:
-            {
-                textRectangle.anchors.bottomMargin=value
-            }
-        }
-
-        Text {
-            text: "Left Offset:"
-        }
-        Slider {
-            id: leftOffset
-            width: 200
-            minimumValue: 0
-            maximumValue: 500
-            value: 0
-            onValueChanged:
-            {
-                textRectangle.anchors.leftMargin=value
-            }
-        }
-
-        Text {
-            text: "Right Offset:"
-        }
-        Slider {
-            id: rightOffset
-            width: 200
-            minimumValue: 0
-            maximumValue: 500
-            value: 0
-            onValueChanged:
-            {
-                textRectangle.anchors.rightMargin=value
-            }
-        }
-
-        Button {
-            text: "background color"
-            onClicked: {
-                backgroundColorDialog.open()
-            }
-        }
-
-        Button {
-            text: "Text background color"
-            onClicked: {
-                bandColorDialog.open()
-            }
-        }
-
-        Rectangle {
-            width: 1
-            height: 1
-        }
-
-        Button {
-            text: "Text color"
-            onClicked: {
-                textColorDialog.open()
-            }
-        }
-
-
-        Button {
-            text: "maximize"
-            onClicked: {
-                mainWindow.visibility = Window.FullScreen
-            }
-        }
-
-        Button {
-            text: "normal"
-            onClicked: {
-                mainWindow.visibility = Window.Windowed
-            }
-        }
-
-
-        Button {
-            text: "Font: Arial"
-            onClicked: {
-                mainText.font.family="Arial"
-            }
-        }
-
-        Button {
-            text: "Font: LCARS"
-            onClicked: {
-                mainText.font.family="LCARSGTJ3"
-            }
-        }
-
-        Button {
-            text: "Font: Ubuntu"
-            onClicked: {
-                mainText.font.family="Ubuntu"
-            }
-        }
-
-        Button {
-            text: "Font: Helvetica"
-            onClicked: {
-                mainText.font.family="Helvetica"
-            }
-        }
-
-
-    Rectangle {
-        width: 1
-        height: 1
-    }
-
-        Button {
-            text: "Close"
-            onClicked: {
-                controlwindow.visible=false;
-            }
-        }
-    }
+    }*/
 
     ColorDialog {
         visible: false
@@ -239,4 +81,6 @@ Window {
             mainText.color = color
         }
     }
+
+
 }

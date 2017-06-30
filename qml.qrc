@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>ControlWindow.qml</file>
+        <file>WindowControl.qml</file>
+        <file>PositionControl.qml</file>
+        <file>ColorControl.qml</file>
+        <file>TextControl.qml</file>
     </qresource>
 </RCC>
