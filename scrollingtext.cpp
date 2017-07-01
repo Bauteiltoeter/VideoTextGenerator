@@ -3,7 +3,7 @@
 #include <QPainter>
 #include <QDebug>
 #include <QTimer>
-
+#include <sys/time.h>
 
 ScrollingText::ScrollingText()
 {
@@ -20,6 +20,14 @@ ScrollingText::ScrollingText()
 
 void ScrollingText::paint(QPainter *painter)
 {
+    struct timeval t;
+    gettimeofday(&t,NULL);
+    static unsigned long last;
+    qDebug() << "time: " << t.tv_usec - last;
+
+    last=t.tv_usec;
+
+
     if(x_pos ==-1)
         x_pos=width();
 

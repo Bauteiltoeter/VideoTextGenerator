@@ -5,6 +5,7 @@
 #include <QQuickPaintedItem>
 #include <QString>
 #include <QColor>
+#include <time.h>
 
 class ScrollingText : public QQuickPaintedItem
 {
