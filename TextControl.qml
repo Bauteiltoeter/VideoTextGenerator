@@ -6,8 +6,9 @@ import QtQuick.Dialogs 1.0
 GroupBox {
     title: "Text"
 
-    Row {
+    Grid {
         spacing: 10
+        columns: 2
 
         TextField {
             id: textfield
@@ -17,6 +18,14 @@ GroupBox {
             text: "Set text"
             onClicked: {
                 mainText.text=textfield.text
+            }
+        }
+
+        CheckBox {
+            text: "Show"
+            checked: true
+            onCheckedChanged: {
+                textRectangle.visible=checked
             }
         }
     }

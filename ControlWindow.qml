@@ -36,6 +36,12 @@ Window {
         anchors.topMargin: 10
     }
 
+    LogoControl {
+        id: logoControl
+        anchors.top: windowControl.bottom
+        anchors.topMargin: 10
+    }
+
 
   /*
 

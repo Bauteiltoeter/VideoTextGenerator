@@ -37,6 +37,14 @@ Window {
         anchors.fill: parent
         color: "#0076A3"
 
+        Image {
+            id: logo
+            source: "file:/home/torben/repositories/VideoText/bayernfur_logo.png"
+            sourceSize.height: 500
+            visible: true
+
+        }
+
         Rectangle {
             id: textRectangle
             anchors.left: parent.left

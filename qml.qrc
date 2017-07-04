@@ -6,5 +6,6 @@
         <file>PositionControl.qml</file>
         <file>ColorControl.qml</file>
         <file>TextControl.qml</file>
+        <file>LogoControl.qml</file>
     </qresource>
 </RCC>
